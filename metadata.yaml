@@ -1,0 +1,7 @@
+name: astrbot_plugin_command_white
+display_name: 指令白名单控制
+desc: 按「全局白名单QQ / 全局黑名单命令 / 群聊模板 / 群内QQ模板 / 私聊模板」五层优先级规则，细粒度控制指令是否可被群聊/个人触发。支持重复反转与 ALL 白名单化。
+author: command_white
+version: v1.0.0
+repo: https://github.com/example/astrbot_plugin_command_white
+astrbot_version: ">=4.0.0"

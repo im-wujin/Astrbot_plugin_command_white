@@ -1,0 +1,114 @@
+{
+  "global_whitelist_qq": {
+    "description": "全局白名单QQ号",
+    "type": "list",
+    "default": [],
+    "hint": "命中可直接使用所有命令"
+  },
+  "global_blacklist_commands": {
+    "description": "全局黑名单命令",
+    "type": "list",
+    "default": [],
+    "hint": "填 ALL 表示所有命令"
+  },
+  "group_templates": {
+    "description": "群聊模板",
+    "type": "template_list",
+    "default": [],
+    "hint": "对特定群进行黑名单控制",
+    "templates": {
+      "group": {
+        "name": "群聊模板",
+        "display_item": "group_id",
+        "items": {
+          "group_id": {
+            "description": "群ID",
+            "type": "string",
+            "default": ""
+          },
+          "blacklist_mode": {
+            "description": "黑名单模式",
+            "type": "string",
+            "default": "保留",
+            "options": ["保留", "替换"]
+          },
+          "blacklist_commands": {
+            "description": "黑名单命令",
+            "type": "list",
+            "default": [],
+            "hint": "保留=叠加全局 替换=仅本群 填 ALL 表示所有命令"
+          }
+        }
+      }
+    }
+  },
+  "group_qq_templates": {
+    "description": "群内QQ号模板",
+    "type": "template_list",
+    "default": [],
+    "hint": "对特定群里特定QQ号进行黑名单控制",
+    "templates": {
+      "qq": {
+        "name": "QQ号模板",
+        "display_item": "qq_id",
+        "items": {
+          "group_id": {
+            "description": "所属群ID",
+            "type": "string",
+            "default": "",
+            "hint": "填 ALL 表示所有群 精确群ID优先"
+          },
+          "qq_id": {
+            "description": "QQ号",
+            "type": "string",
+            "default": ""
+          },
+          "blacklist_mode": {
+            "description": "黑名单模式",
+            "type": "string",
+            "default": "保留",
+            "options": ["保留", "替换", "替换全局黑名单", "替换群聊黑名单"]
+          },
+          "blacklist_commands": {
+            "description": "黑名单命令",
+            "type": "list",
+            "default": [],
+            "hint": "填 ALL 表示所有命令"
+          }
+        }
+      }
+    }
+  },
+  "private_templates": {
+    "description": "私聊模板",
+    "type": "template_list",
+    "default": [],
+    "hint": "对私聊中特定QQ号进行黑名单控制（仅私聊生效，群聊不参与）",
+    "templates": {
+      "private_qq": {
+        "name": "私聊QQ模板",
+        "display_item": "qq_id",
+        "items": {
+          "qq_id": {
+            "description": "QQ号",
+            "type": "string",
+            "default": "",
+            "hint": "填 ALL 表示所有QQ号 精确QQ号优先"
+          },
+          "blacklist_mode": {
+            "description": "黑名单模式",
+            "type": "string",
+            "default": "保留",
+            "options": ["保留", "替换"]
+          },
+          "blacklist_commands": {
+            "description": "黑名单命令",
+            "type": "list",
+            "default": [],
+            "hint": "保留=叠加全局 替换=仅此QQ 填 ALL 表示所有命令"
+          }
+        }
+      }
+    }
+  }
+}
